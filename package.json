@@ -4,6 +4,7 @@
   "files": [
     "dist/"
   ],
+  "types": "./dist/ngx-sortablejs/index.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -23,7 +24,7 @@
     "prepare-release": "yarn run build:lib && cpr README.md dist/ngx-sortablejs/README.md  && cpr LICENSE.md dist/ngx-sortablejs/LICENSE.md  && yarn run build:app",
     "release": "yarn run prepare-release && semantic-release -d",
     "release:apply": "yarn run prepare-release && semantic-release --ci false",
-    "prepare": "yarn build"
+    "prepare": "yarn build:lib"
   },
   "private": true,
   "dependencies": {
