@@ -1,11 +1,6 @@
 {
   "name": "ngx-sortablejs-app",
   "version": "16.0.0",
-  "module": "dist/ngx-sortablejs/fest2022/ngx-sortablejs.mjs",
-  "esm2022": "dist/ngx-sortablejs/esm2022/ngx-sortablejs.mjs",
-  "typings": "dist/ngx-sortablejs/index.d.ts",
-  "type": "module",
-  "main": "dist/ngx-sortablejs/public-api.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
