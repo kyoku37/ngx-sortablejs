@@ -12,15 +12,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sortablejs/ngx-sortablejs"
+    "url": "https://github.com/epicuro/ngx-sortablejs"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
   "peerDependencies": {
-    "@angular/common": "^11.0.0",
-    "@angular/core": "^11.0.0",
-    "sortablejs": ">=1.7.0"
+    "@angular/common": "16.1.2",
+    "@angular/core": "16.1.2",
+    "sortablejs": "1.15.0"
   },
   "main": "src/public-api.ts"
 }

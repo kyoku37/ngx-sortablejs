@@ -155,5 +155,8 @@
       }
     }
   },
-  "defaultProject": "ngx-sortablejs-app"
+  "defaultProject": "ngx-sortablejs-app",
+  "cli": {
+    "analytics": "fe00121c-2771-478a-b3c4-f16eef0e943b"
+  }
 }
