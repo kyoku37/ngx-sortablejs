@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build:lib",
-    "build:app": "ng build --prod --base-hrefzone.js/dist/zone /ngx-sortablejs/",
+    "build": "yarn run build:lib && yarn run build:app",
+    "build:app": "ng build --configuration production --base-href /ngx-sortablejs/",
     "build:lib": "ng build ngx-sortablejs",
     "test:app": "ng test ngx-sortablejs-app",
     "test:app:ci": "ng test ngx-sortablejs-app --watch=false --progress=false --browsers=ChromeHeadlessCI",
