@@ -23,7 +23,8 @@
     "validate-release": "yarn run lint && yarn run test:app:ci && yarn run test:lib:ci",
     "prepare-release": "yarn run build:lib && cpr README.md dist/ngx-sortablejs/README.md  && cpr LICENSE.md dist/ngx-sortablejs/LICENSE.md  && yarn run build:app",
     "release": "yarn run prepare-release && semantic-release -d",
-    "release:apply": "yarn run prepare-release && semantic-release --ci false"
+    "release:apply": "yarn run prepare-release && semantic-release --ci false",
+    "postinstall": "npm run build"
   },
   "private": true,
   "dependencies": {
