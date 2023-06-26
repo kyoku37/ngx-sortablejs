@@ -1,9 +1,14 @@
 {
   "name": "ngx-sortablejs-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "module": "dist/ngx-sortablejs/fest2022/ngx-sortablejs.mjs",
+  "esm2022": "dist/ngx-sortablejs/esm2022/ngx-sortablejs.mjs",
+  "typings": "dist/ngx-sortablejs/index.d.ts",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "build": "npm run build:lib",
     "build:app": "ng build --prod --base-hrefzone.js/dist/zone /ngx-sortablejs/",
     "build:lib": "ng build ngx-sortablejs",
     "test:app": "ng test ngx-sortablejs-app",
