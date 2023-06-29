@@ -1,0 +1,35 @@
+export class SortablejsBinding {
+    target;
+    constructor(target) {
+        this.target = target;
+    }
+    insert(index, item) {
+        if (this.isFormArray) {
+            this.target.insert(index, item);
+        }
+        else {
+            this.target.splice(index, 0, item);
+        }
+    }
+    get(index) {
+        return this.isFormArray ? this.target.at(index) : this.target[index];
+    }
+    remove(index) {
+        let item;
+        if (this.isFormArray) {
+            item = this.target.at(index);
+            this.target.removeAt(index);
+        }
+        else {
+            item = this.target.splice(index, 1)[0];
+        }
+        return item;
+    }
+    // we need this to identify that the target is a FormArray
+    // we don't want to have a dependency on @angular/forms just for that
+    get isFormArray() {
+        // just checking for random FormArray methods not available on a standard array
+        return !!this.target.at && !!this.target.insert && !!this.target.reset;
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic29ydGFibGVqcy1iaW5kaW5nLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LXNvcnRhYmxlanMvc3JjL2xpYi9zb3J0YWJsZWpzLWJpbmRpbmcudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUEsTUFBTSxPQUFPLGlCQUFpQjtJQUVSO0lBQXBCLFlBQW9CLE1BQW9CO1FBQXBCLFdBQU0sR0FBTixNQUFNLENBQWM7SUFDeEMsQ0FBQztJQUVELE1BQU0sQ0FBQyxLQUFhLEVBQUUsSUFBUztRQUM3QixJQUFJLElBQUksQ0FBQyxXQUFXLEVBQUU7WUFDcEIsSUFBSSxDQUFDLE1BQU0sQ0FBQyxNQUFNLENBQUMsS0FBSyxFQUFFLElBQUksQ0FBQyxDQUFDO1NBQ2pDO2FBQU07WUFDTCxJQUFJLENBQUMsTUFBTSxDQUFDLE1BQU0sQ0FBQyxLQUFLLEVBQUUsQ0FBQyxFQUFFLElBQUksQ0FBQyxDQUFDO1NBQ3BDO0lBQ0gsQ0FBQztJQUVELEdBQUcsQ0FBQyxLQUFhO1FBQ2YsT0FBTyxJQUFJLENBQUMsV0FBVyxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLEVBQUUsQ0FBQyxLQUFLLENBQUMsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUN2RSxDQUFDO0lBRUQsTUFBTSxDQUFDLEtBQWE7UUFDbEIsSUFBSSxJQUFJLENBQUM7UUFFVCxJQUFJLElBQUksQ0FBQyxXQUFXLEVBQUU7WUFDcEIsSUFBSSxHQUFHLElBQUksQ0FBQyxNQUFNLENBQUMsRUFBRSxDQUFDLEtBQUssQ0FBQyxDQUFDO1lBQzdCLElBQUksQ0FBQyxNQUFNLENBQUMsUUFBUSxDQUFDLEtBQUssQ0FBQyxDQUFDO1NBQzdCO2FBQU07WUFDTCxJQUFJLEdBQUcsSUFBSSxDQUFDLE1BQU0sQ0FBQyxNQUFNLENBQUMsS0FBSyxFQUFFLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDO1NBQ3hDO1FBRUQsT0FBTyxJQUFJLENBQUM7SUFDZCxDQUFDO0lBRUQsMERBQTBEO0lBQzFELHFFQUFxRTtJQUNyRSxJQUFZLFdBQVc7UUFDckIsK0VBQStFO1FBQy9FLE9BQU8sQ0FBQyxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsRUFBRSxJQUFJLENBQUMsQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLE1BQU0sSUFBSSxDQUFDLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxLQUFLLENBQUM7SUFDekUsQ0FBQztDQUVGIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtTb3J0YWJsZURhdGF9IGZyb20gJy4vc29ydGFibGVqcy5kaXJlY3RpdmUnO1xuXG5leHBvcnQgY2xhc3MgU29ydGFibGVqc0JpbmRpbmcge1xuXG4gIGNvbnN0cnVjdG9yKHByaXZhdGUgdGFyZ2V0OiBTb3J0YWJsZURhdGEpIHtcbiAgfVxuXG4gIGluc2VydChpbmRleDogbnVtYmVyLCBpdGVtOiBhbnkpIHtcbiAgICBpZiAodGhpcy5pc0Zvcm1BcnJheSkge1xuICAgICAgdGhpcy50YXJnZXQuaW5zZXJ0KGluZGV4LCBpdGVtKTtcbiAgICB9IGVsc2Uge1xuICAgICAgdGhpcy50YXJnZXQuc3BsaWNlKGluZGV4LCAwLCBpdGVtKTtcbiAgICB9XG4gIH1cblxuICBnZXQoaW5kZXg6IG51bWJlcikge1xuICAgIHJldHVybiB0aGlzLmlzRm9ybUFycmF5ID8gdGhpcy50YXJnZXQuYXQoaW5kZXgpIDogdGhpcy50YXJnZXRbaW5kZXhdO1xuICB9XG5cbiAgcmVtb3ZlKGluZGV4OiBudW1iZXIpIHtcbiAgICBsZXQgaXRlbTtcblxuICAgIGlmICh0aGlzLmlzRm9ybUFycmF5KSB7XG4gICAgICBpdGVtID0gdGhpcy50YXJnZXQuYXQoaW5kZXgpO1xuICAgICAgdGhpcy50YXJnZXQucmVtb3ZlQXQoaW5kZXgpO1xuICAgIH0gZWxzZSB7XG4gICAgICBpdGVtID0gdGhpcy50YXJnZXQuc3BsaWNlKGluZGV4LCAxKVswXTtcbiAgICB9XG5cbiAgICByZXR1cm4gaXRlbTtcbiAgfVxuXG4gIC8vIHdlIG5lZWQgdGhpcyB0byBpZGVudGlmeSB0aGF0IHRoZSB0YXJnZXQgaXMgYSBGb3JtQXJyYXlcbiAgLy8gd2UgZG9uJ3Qgd2FudCB0byBoYXZlIGEgZGVwZW5kZW5jeSBvbiBAYW5ndWxhci9mb3JtcyBqdXN0IGZvciB0aGF0XG4gIHByaXZhdGUgZ2V0IGlzRm9ybUFycmF5KCkge1xuICAgIC8vIGp1c3QgY2hlY2tpbmcgZm9yIHJhbmRvbSBGb3JtQXJyYXkgbWV0aG9kcyBub3QgYXZhaWxhYmxlIG9uIGEgc3RhbmRhcmQgYXJyYXlcbiAgICByZXR1cm4gISF0aGlzLnRhcmdldC5hdCAmJiAhIXRoaXMudGFyZ2V0Lmluc2VydCAmJiAhIXRoaXMudGFyZ2V0LnJlc2V0O1xuICB9XG5cbn1cbiJdfQ==
