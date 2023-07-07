@@ -1,4 +1,4 @@
-import { ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChange } from '@angular/core';
+import { ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges } from '@angular/core';
 import { Options } from 'sortablejs';
 import { SortablejsService } from './sortablejs.service';
 import * as i0 from "@angular/core";
@@ -17,9 +17,7 @@ export declare class SortablejsDirective implements OnInit, OnChanges, OnDestroy
     sortablejsInit: EventEmitter<any>;
     constructor(globalConfig: Options, service: SortablejsService, element: ElementRef, zone: NgZone, renderer: Renderer2);
     ngOnInit(): void;
-    ngOnChanges(changes: {
-        [prop in keyof SortablejsDirective]: SimpleChange;
-    }): void;
+    ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     private create;
     private getBindings;

@@ -2,6 +2,7 @@ import {ModuleWithProviders, NgModule} from '@angular/core';
 import {GLOBALS} from './globals';
 import {SortablejsDirective} from './sortablejs.directive';
 import {Options} from 'sortablejs';
+import { SortablejsService } from './sortablejs.service';
 
 @NgModule({
   declarations: [SortablejsDirective],
@@ -14,6 +15,7 @@ export class SortablejsModule {
       ngModule: SortablejsModule,
       providers: [
         {provide: GLOBALS, useValue: globalOptions},
+        SortablejsService,
       ],
     };
   }

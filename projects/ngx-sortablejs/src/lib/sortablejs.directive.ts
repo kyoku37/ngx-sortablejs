@@ -12,6 +12,7 @@ import {
   Output,
   Renderer2,
   SimpleChange,
+  SimpleChanges,
 } from '@angular/core';
 import Sortable, {Options} from 'sortablejs';
 import {GLOBALS} from './globals';
@@ -70,7 +71,7 @@ export class SortablejsDirective implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  ngOnChanges(changes: { [prop in keyof SortablejsDirective]: SimpleChange }) {
+  ngOnChanges(changes: SimpleChanges) {
     const optionsChange: SimpleChange = changes.sortablejsOptions;
 
     if (optionsChange && !optionsChange.isFirstChange()) {
